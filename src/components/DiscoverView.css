@@ -1,0 +1,799 @@
+/* ═══════════════════════════════════════════════════════════════
+   LUNA.FM v2 — Discover View Styles
+   4-Section Editorial Showcase with Theme Token Integration
+   ═══════════════════════════════════════════════════════════════ */
+
+.discover-view {
+  --bg-primary: var(--theme-bg-primary, #0c0a14);
+  --surface: var(--theme-surface-base, #13101d);
+  --text-primary: var(--theme-text-primary, #fbf7ee);
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 88px 24px 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  color: var(--theme-text-primary, var(--text-primary, var(--off-white)));
+  background: var(--theme-surface-base, var(--bg-primary, transparent));
+  animation: fadeIn 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Header ── */
+.discover-view__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid var(--theme-border-subtle, rgba(255, 255, 255, 0.08));
+  padding-bottom: 24px;
+}
+
+.discover-view__badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--theme-font-mono, monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--theme-accent-primary, var(--pink));
+  text-transform: uppercase;
+}
+
+.discover-view__title {
+  font-family: var(--theme-font-display, inherit);
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--theme-text-primary, var(--off-white));
+}
+
+.discover-view__subtitle {
+  font-size: 1rem;
+  color: var(--theme-text-secondary, rgba(255, 255, 255, 0.65));
+  margin: 0;
+  max-width: 640px;
+  line-height: 1.5;
+}
+
+/* ── Section General ── */
+.discover-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.discover-section__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.discover-section__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.discover-section__badge {
+  font-family: var(--theme-font-mono, monospace);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--theme-accent-secondary, var(--lavender));
+  text-transform: uppercase;
+}
+
+.discover-section__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.01em;
+  color: var(--theme-text-primary, var(--off-white));
+}
+
+.discover-section__hint {
+  font-size: 0.85rem;
+  color: var(--theme-text-muted, rgba(255, 255, 255, 0.45));
+  margin: 0;
+}
+
+.discover-section__count {
+  font-family: var(--theme-font-mono, monospace);
+  font-size: 0.75rem;
+  color: var(--theme-text-muted, rgba(255, 255, 255, 0.45));
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--theme-surface-glass, rgba(255, 255, 255, 0.05));
+  border: 1px solid var(--theme-border-subtle, rgba(255, 255, 255, 0.08));
+}
+
+.discover-section__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.discover-section__clear-btn {
+  font-family: var(--theme-font-mono, monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--theme-text-muted, rgba(255, 255, 255, 0.5));
+  background: transparent;
+  border: 1px solid var(--theme-border-subtle, rgba(255, 255, 255, 0.12));
+  border-radius: 999px;
+  padding: 3px 12px;
+  cursor: pointer;
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.discover-section__clear-btn:hover {
+  color: var(--theme-accent-primary, var(--pink));
+  border-color: var(--theme-accent-primary, var(--pink));
+  background: rgba(243, 184, 216, 0.08);
+}
+
+/* ── Section: Last Played ── */
+.discover-section--last-played {
+  position: relative;
+}
+
+.discover-empty-history {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: var(--theme-surface-glass, rgba(255, 255, 255, 0.02));
+  border: 1px dashed var(--theme-border-subtle, rgba(255, 255, 255, 0.12));
+  color: var(--theme-text-muted, rgba(255, 255, 255, 0.5));
+  margin-top: 4px;
+}
+
+.discover-empty-history__icon {
+  font-size: 1.15rem;
+  opacity: 0.7;
+  color: var(--theme-accent-secondary, var(--lavender));
+}
+
+.discover-empty-history__text {
+  margin: 0;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  font-family: var(--theme-font-sans, system-ui, sans-serif);
+}
+
+/* ── Horizontal Carousels ── */
+.discover-carousel {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px 4px 16px;
+  margin: -8px -4px -16px;
+}
+
+.discover-carousel::-webkit-scrollbar {
+  height: 6px;
+}
+
+.discover-carousel::-webkit-scrollbar-track {
+  background: var(--theme-surface-base, rgba(0, 0, 0, 0.2));
+  border-radius: 999px;
+}
+
+.discover-carousel::-webkit-scrollbar-thumb {
+  background: var(--theme-border-subtle, rgba(255, 255, 255, 0.15));
+  border-radius: 999px;
+}
+
+.discover-carousel::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-accent-primary, var(--pink));
+}
+
+/* ── 3-Tier Artwork Container: Guaranteed Standard 1:1 Square ── */
+.discover-artwork {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--theme-surface-elevated, #1c1826);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.discover-artwork__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.discover-artwork__glyph-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(243, 184, 216, 0.15), rgba(185, 169, 214, 0.1));
+  color: var(--theme-accent-primary, var(--pink));
+  font-size: 1.5rem;
+  user-select: none;
+}
+
+/* ── Section A: Newly Added Track Card: Compact, Uniform 1:1 Sizing ── */
+.discover-track-card {
+  flex: 0 0 136px;
+  width: 136px;
+  min-width: 136px;
+  max-width: 136px;
+  height: 204px;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 12px;
+  background: var(--theme-surface-glass, rgba(255, 255, 255, 0.03));
+  border: 1px solid var(--theme-border-subtle, rgba(255, 255, 255, 0.08));
+  cursor: pointer;
+  transition: transform 200ms ease, border-color 200ms ease, background 200ms ease;
+}
+
+.discover-track-card:hover {
+  transform: translateY(-4px);
+  background: var(--theme-surface-elevated, rgba(255, 255, 255, 0.06));
+  border-color: var(--theme-accent-primary, var(--pink));
+}
+
+.discover-track-card--active {
+  border-color: var(--theme-accent-primary, var(--pink));
+  background: rgba(243, 184, 216, 0.08);
+}
+
+.discover-track-card__art-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--theme-surface-elevated, #1c1826);
+  box-sizing: border-box;
+}
+
+.discover-track-card__art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.discover-track-card__play-btn {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--theme-accent-primary, var(--pink));
+  color: #100e17;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 180ms ease, transform 180ms ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.discover-track-card:hover .discover-track-card__play-btn,
+.discover-track-card--active .discover-track-card__play-btn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.discover-track-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 8px;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.discover-track-card__title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--theme-text-primary, var(--off-white));
+  line-height: 1.25;
+}
+
+.discover-track-card__artist {
+  font-size: 0.72rem;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--theme-text-secondary, rgba(255, 255, 255, 0.6));
+  line-height: 1.2;
+}
+
+.discover-track-card__duration {
+  font-family: var(--theme-font-mono, monospace);
+  font-size: 0.65rem;
+  color: var(--theme-text-muted, rgba(255, 255, 255, 0.4));
+  margin-top: auto;
+}
+
+/* ── Section B: Listen To Playlist Card ── */
+.discover-playlist-card {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--theme-surface-glass, rgba(255, 255, 255, 0.03));
+  border: 1px solid var(--theme-border-subtle, rgba(255, 255, 255, 0.08));
+  transition: transform 200ms ease, border-color 200ms ease;
+}
+
+.discover-playlist-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--theme-accent-secondary, var(--lavender));
+}
+
+.discover-playlist-card--active {
+  border-color: var(--theme-accent-primary, var(--pink));
+}
+
+.discover-playlist-card__cover {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.discover-playlist-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.discover-playlist-card:hover .discover-playlist-card__img {
+  transform: scale(1.05);
+}
+
+.discover-playlist-card__cover-glyph {
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.discover-playlist-card__play-btn {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--theme-accent-primary, var(--pink));
+  color: #100e17;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.discover-playlist-card__play-btn:hover {
+  transform: scale(1.08);
+}
+
+.discover-playlist-card__body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.discover-playlist-card__tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.discover-tag {
+  font-family: var(--theme-font-mono, monospace);
+  font-size: 0.68rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--theme-surface-elevated, rgba(255, 255, 255, 0.08));
+  color: var(--theme-accent-secondary, var(--lavender));
+}
+
+.discover-tag--count {
+  color: var(--theme-text-muted, rgba(255, 255, 255, 0.5));
+}
+
+.discover-playlist-card__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--theme-text-primary, var(--off-white));
+}
+
+.discover-playlist-card__desc {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--theme-text-secondary, rgba(255, 255, 255, 0.6));
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.discover-playlist-card__actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.discover-action-btn {
+  font-family: var(--theme-font-mono, monospace);
+  font-size: 0.72rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.discover-action-btn--primary {
+  background: rgba(243, 184, 216, 0.15);
+  border: 1px solid var(--theme-accent-primary, var(--pink));
+  color: var(--theme-accent-primary, var(--pink));
+}
+
+.discover-action-btn--primary:hover {
+  background: var(--theme-accent-primary, var(--pink));
+  color: #100e17;
+}
+
+.discover-action-btn--ghost {
+  background: transparent;
+  border: 1px solid var(--theme-border-subtle, rgba(255, 255, 255, 0.12));
+  color: var(--theme-text-secondary, rgba(255, 255, 255, 0.7));
+}
+
+.discover-action-btn--ghost:hover {
+  border-color: var(--theme-text-primary, var(--off-white));
+  color: var(--theme-text-primary, var(--off-white));
+}
+
+/* ── Section C: Featured Curated Editorial Card ── */
+.discover-featured-card {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+  position: relative;
+  height: 220px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--theme-border-subtle, rgba(255, 255, 255, 0.12));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.discover-featured-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--theme-accent-primary, var(--pink));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.discover-featured-card--active {
+  border-color: var(--theme-accent-primary, var(--pink));
+  box-shadow: 0 0 20px rgba(243, 184, 216, 0.25);
+}
+
+.discover-featured-card__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 400ms ease;
+  z-index: 0;
+}
+
+.discover-featured-card:hover .discover-featured-card__bg {
+  transform: scale(1.04);
+}
+
+.discover-featured-card__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.discover-featured-card__badge {
+  font-family: var(--theme-font-mono, monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--theme-accent-primary, var(--pink));
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.discover-featured-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.discover-featured-card__desc {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.discover-featured-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.discover-featured-card__tracks {
+  font-family: var(--theme-font-mono, monospace);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.discover-featured-card__play {
+  font-family: var(--theme-font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--theme-accent-primary, var(--pink));
+  color: #100e17;
+  border: none;
+  cursor: pointer;
+  transition: transform 180ms ease;
+}
+
+.discover-featured-card__play:hover {
+  transform: scale(1.05);
+}
+
+/* ── Section D: Explore Frequencies (Categorized) ── */
+.discover-pills-bar {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 0 12px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.discover-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--theme-surface-glass, rgba(255, 255, 255, 0.05));
+  border: 1px solid var(--theme-border-subtle, rgba(255, 255, 255, 0.1));
+  color: var(--theme-text-secondary, rgba(255, 255, 255, 0.7));
+  font-family: var(--theme-font-mono, monospace);
+  font-size: 0.75rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 180ms ease;
+}
+
+.discover-pill:hover {
+  border-color: var(--theme-accent-secondary, var(--lavender));
+  color: var(--theme-text-primary, var(--off-white));
+}
+
+.discover-pill--active {
+  background: var(--theme-accent-primary, var(--pink));
+  border-color: var(--theme-accent-primary, var(--pink));
+  color: #100e17;
+  font-weight: 600;
+}
+
+.discover-pill__count {
+  font-size: 0.68rem;
+  opacity: 0.75;
+}
+
+.discover-frequencies-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.discover-freq-row {
+  display: grid;
+  grid-template-columns: 48px 1fr 180px 70px;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--theme-surface-glass, rgba(255, 255, 255, 0.02));
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.discover-freq-row:hover {
+  background: var(--theme-surface-elevated, rgba(255, 255, 255, 0.06));
+  border-color: var(--theme-border-subtle, rgba(255, 255, 255, 0.1));
+}
+
+.discover-freq-row--active {
+  background: rgba(243, 184, 216, 0.08);
+  border-color: var(--theme-accent-primary, var(--pink));
+}
+
+.discover-freq-row__art-wrap {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.discover-freq-row__art {
+  width: 100%;
+  height: 100%;
+}
+
+.discover-freq-row__play-icon {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-accent-primary, var(--pink));
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.discover-freq-row:hover .discover-freq-row__play-icon,
+.discover-freq-row--active .discover-freq-row__play-icon {
+  opacity: 1;
+}
+
+.discover-freq-row__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.discover-freq-row__title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--theme-text-primary, var(--off-white));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.discover-freq-row__artist {
+  font-size: 0.775rem;
+  color: var(--theme-text-secondary, rgba(255, 255, 255, 0.6));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.discover-freq-row__album {
+  font-size: 0.8rem;
+  color: var(--theme-text-muted, rgba(255, 255, 255, 0.5));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.discover-freq-row__duration {
+  font-family: var(--theme-font-mono, monospace);
+  font-size: 0.75rem;
+  color: var(--theme-text-muted, rgba(255, 255, 255, 0.4));
+  text-align: right;
+}
+
+/* ── Mobile Breakpoints ── */
+@media (max-width: 768px) {
+  .discover-view {
+    padding: 72px 16px 130px;
+    gap: 40px;
+  }
+
+  .discover-view__title {
+    font-size: 1.75rem;
+  }
+
+  .discover-track-card {
+    flex: 0 0 115px;
+    width: 115px;
+    min-width: 115px;
+    max-width: 115px;
+    height: 185px;
+    padding: 8px;
+  }
+
+  .discover-playlist-card {
+    flex: 0 0 240px;
+  }
+
+  .discover-featured-card {
+    flex: 0 0 260px;
+    height: 190px;
+  }
+
+  .discover-freq-row {
+    grid-template-columns: 44px 1fr 60px;
+    gap: 12px;
+  }
+
+  .discover-freq-row__album {
+    display: none;
+  }
+}

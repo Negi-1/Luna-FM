@@ -1,0 +1,33 @@
+.star-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  contain: strict;
+}
+
+.star-field__star {
+  position: absolute;
+  font-size: 0.65rem;
+  opacity: 0.3;
+  will-change: opacity;
+}
+
+.star-field__star--pink {
+  color: var(--pink);
+}
+
+.star-field__star--off-white {
+  color: var(--off-white);
+}
+
+.star-field__star--lavender {
+  color: var(--lavender);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .star-field__star {
+    animation: twinkle 5s ease-in-out infinite;
+  }
+}

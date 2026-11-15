@@ -1,0 +1,45 @@
+/* ═══════════════════════════════════════════════════════════════
+   LUNA.FM v2 — Unified Artwork Visualizer Component Styles
+   Unifies CrossfadeImage, CDDisc (main only), and AudioReactiveVisualizer
+   ═══════════════════════════════════════════════════════════════ */
+
+.artwork-visualizer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.artwork-visualizer--main {
+  width: var(--artwork-size);
+  height: var(--artwork-size);
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+}
+
+.artwork-visualizer--compact {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+
+.artwork-visualizer__canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none !important;
+  user-select: none;
+  z-index: 0;
+}
+
+.artwork-visualizer__cd {
+  z-index: 1;
+}
+
+.artwork-visualizer__frame {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}

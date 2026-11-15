@@ -1,0 +1,27 @@
+/* ═══════════════════════════════════════════════════════════════
+   LUNA.FM v2 — Audio Reactive Visualizer Styles
+   Rendered strictly behind album artwork with pointer-events: none
+   ═══════════════════════════════════════════════════════════════ */
+
+.audio-reactive-visualizer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none !important;
+  user-select: none;
+  z-index: 0;
+  display: block;
+}
+
+.audio-reactive-visualizer--main {
+  width: calc(100% + 380px);
+  height: calc(100% + 380px);
+  max-width: 1400px;
+  max-height: 1400px;
+}
+
+.audio-reactive-visualizer--compact {
+  width: 150px;
+  height: 150px;
+}

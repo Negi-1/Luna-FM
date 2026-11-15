@@ -1,0 +1,330 @@
+/**
+ * LUNA.FM — Centralized Theme Engine Stylesheet
+ * Authoritative dual-layer CSS custom properties system:
+ * Layer A: Semantic theme design tokens (--theme-*)
+ * Layer B: Backward-compatible aliases remapping (--pink, --lavender, --charcoal, etc.)
+ */
+
+/* ═══════════════════════════════════════════════════════════════
+   01 NOCTURNE (DEFAULT)
+   Cosmic Night Radio — Deep space charcoal with cosmic pink & lavender
+   ═══════════════════════════════════════════════════════════════ */
+:root,
+:root[data-theme="nocturne"] {
+  /* Layer A: Semantic Theme Tokens */
+  --theme-accent-primary: #F3B8D8;
+  --theme-accent-secondary: #B9A9D6;
+  --theme-surface-base: #19171E;
+  --theme-surface-elevated: #292231;
+  --theme-surface-glass: rgba(41, 34, 49, 0.75);
+  --theme-text-primary: #F5F0F5;
+  --theme-text-secondary: #C7C5CE;
+  --theme-text-muted: rgba(199, 197, 206, 0.75);
+  --theme-border-subtle: rgba(185, 169, 214, 0.16);
+  --theme-border-accent: rgba(243, 184, 216, 0.36);
+  --theme-slider-fill: #F3B8D8;
+  --theme-glow-a: #F3B8D8;
+  --theme-glow-b: #B9A9D6;
+  --theme-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --theme-font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --theme-font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', 'Fira Code', Menlo, monospace;
+  --theme-gradient-ambient:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(41, 34, 49, 0.8), transparent),
+    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(75, 36, 74, 0.15), transparent),
+    radial-gradient(ellipse 50% 35% at 80% 60%, rgba(185, 169, 214, 0.08), transparent);
+
+  /* Layer B: Backward-Compatible Component Palette Aliases */
+  --pink: var(--theme-accent-primary);
+  --lavender: var(--theme-accent-secondary);
+  --charcoal: var(--theme-surface-base);
+  --deep-purple: var(--theme-surface-elevated);
+  --silver: var(--theme-text-secondary);
+  --off-white: var(--theme-text-primary);
+
+  --bg-primary: var(--theme-surface-base);
+  --bg-secondary: var(--theme-surface-elevated);
+  --text-primary: var(--theme-text-primary);
+  --text-secondary: var(--theme-text-secondary);
+  --text-muted: var(--theme-text-muted);
+  --border-subtle: var(--theme-border-subtle);
+  --border-accent: var(--theme-border-accent);
+  --slider-fill-color: var(--theme-slider-fill);
+  --font-display: var(--theme-font-display);
+  --font-body: var(--theme-font-body);
+  --font-mono: var(--theme-font-mono);
+}
+
+:root[data-theme="nocturne"] body::before {
+  background-image: var(--theme-gradient-ambient);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   02 AQUA
+   Abyssal Bioluminescence — Ocean navy with neon cyan & seafoam mint
+   ═══════════════════════════════════════════════════════════════ */
+:root[data-theme="aqua"] {
+  /* Layer A: Semantic Theme Tokens */
+  --theme-accent-primary: #22D3EE;
+  --theme-accent-secondary: #34D399;
+  --theme-surface-base: #08131B;
+  --theme-surface-elevated: #0F2432;
+  --theme-surface-glass: rgba(15, 36, 50, 0.75);
+  --theme-text-primary: #E0F7FA;
+  --theme-text-secondary: #94A3B8;
+  --theme-text-muted: rgba(148, 163, 184, 0.75);
+  --theme-border-subtle: rgba(34, 211, 238, 0.18);
+  --theme-border-accent: rgba(34, 211, 238, 0.40);
+  --theme-slider-fill: #22D3EE;
+  --theme-glow-a: #22D3EE;
+  --theme-glow-b: #34D399;
+  --theme-font-display: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --theme-font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --theme-font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', 'Fira Code', Menlo, monospace;
+  --theme-gradient-ambient:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(15, 36, 50, 0.85), transparent),
+    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(34, 211, 238, 0.12), transparent),
+    radial-gradient(ellipse 50% 35% at 80% 60%, rgba(52, 211, 153, 0.08), transparent);
+
+  /* Layer B: Backward-Compatible Component Palette Aliases */
+  --pink: var(--theme-accent-primary);
+  --lavender: var(--theme-accent-secondary);
+  --charcoal: var(--theme-surface-base);
+  --deep-purple: var(--theme-surface-elevated);
+  --silver: var(--theme-text-secondary);
+  --off-white: var(--theme-text-primary);
+
+  --bg-primary: var(--theme-surface-base);
+  --bg-secondary: var(--theme-surface-elevated);
+  --text-primary: var(--theme-text-primary);
+  --text-secondary: var(--theme-text-secondary);
+  --text-muted: var(--theme-text-muted);
+  --border-subtle: var(--theme-border-subtle);
+  --border-accent: var(--theme-border-accent);
+  --slider-fill-color: var(--theme-slider-fill);
+  --font-display: var(--theme-font-display);
+  --font-body: var(--theme-font-body);
+  --font-mono: var(--theme-font-mono);
+}
+
+:root[data-theme="aqua"] body::before {
+  background-image: var(--theme-gradient-ambient);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   03 AFTERGLOW
+   Vintage Filament Warmth — Espresso walnut with glowing amber & ochre
+   ═══════════════════════════════════════════════════════════════ */
+:root[data-theme="afterglow"] {
+  /* Layer A: Semantic Theme Tokens */
+  --theme-accent-primary: #F59E0B;
+  --theme-accent-secondary: #D97706;
+  --theme-surface-base: #17120E;
+  --theme-surface-elevated: #261C14;
+  --theme-surface-glass: rgba(38, 28, 20, 0.75);
+  --theme-text-primary: #FEF3C7;
+  --theme-text-secondary: #D4B996;
+  --theme-text-muted: rgba(212, 185, 150, 0.75);
+  --theme-border-subtle: rgba(245, 158, 11, 0.18);
+  --theme-border-accent: rgba(245, 158, 11, 0.42);
+  --theme-slider-fill: #F59E0B;
+  --theme-glow-a: #F59E0B;
+  --theme-glow-b: #EA580C;
+  --theme-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --theme-font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --theme-font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', 'Fira Code', Menlo, monospace;
+  --theme-gradient-ambient:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(38, 28, 20, 0.85), transparent),
+    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(245, 158, 11, 0.12), transparent),
+    radial-gradient(ellipse 50% 35% at 80% 60%, rgba(217, 119, 6, 0.09), transparent);
+
+  /* Layer B: Backward-Compatible Component Palette Aliases */
+  --pink: var(--theme-accent-primary);
+  --lavender: var(--theme-accent-secondary);
+  --charcoal: var(--theme-surface-base);
+  --deep-purple: var(--theme-surface-elevated);
+  --silver: var(--theme-text-secondary);
+  --off-white: var(--theme-text-primary);
+
+  --bg-primary: var(--theme-surface-base);
+  --bg-secondary: var(--theme-surface-elevated);
+  --text-primary: var(--theme-text-primary);
+  --text-secondary: var(--theme-text-secondary);
+  --text-muted: var(--theme-text-muted);
+  --border-subtle: var(--theme-border-subtle);
+  --border-accent: var(--theme-border-accent);
+  --slider-fill-color: var(--theme-slider-fill);
+  --font-display: var(--theme-font-display);
+  --font-body: var(--theme-font-body);
+  --font-mono: var(--theme-font-mono);
+}
+
+:root[data-theme="afterglow"] body::before {
+  background-image: var(--theme-gradient-ambient);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   04 OVERDRIVE
+   High-Octane Cyberpunk — Obsidian night with laser crimson & hot magenta
+   ═══════════════════════════════════════════════════════════════ */
+:root[data-theme="overdrive"] {
+  /* Layer A: Semantic Theme Tokens */
+  --theme-accent-primary: #EF4444;
+  --theme-accent-secondary: #EC4899;
+  --theme-surface-base: #0D0B12;
+  --theme-surface-elevated: #1A1224;
+  --theme-surface-glass: rgba(26, 18, 36, 0.80);
+  --theme-text-primary: #FFFFFF;
+  --theme-text-secondary: #CBD5E1;
+  --theme-text-muted: rgba(203, 213, 225, 0.70);
+  --theme-border-subtle: rgba(239, 68, 68, 0.22);
+  --theme-border-accent: rgba(239, 68, 68, 0.50);
+  --theme-slider-fill: #EF4444;
+  --theme-glow-a: #EF4444;
+  --theme-glow-b: #EC4899;
+  --theme-font-display: 'JetBrains Mono', ui-monospace, 'Cascadia Code', 'Fira Code', Menlo, monospace;
+  --theme-font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --theme-font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', 'Fira Code', Menlo, monospace;
+  --theme-gradient-ambient:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(26, 18, 36, 0.90), transparent),
+    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(239, 68, 68, 0.15), transparent),
+    radial-gradient(ellipse 50% 35% at 80% 60%, rgba(236, 72, 153, 0.10), transparent);
+
+  /* Layer B: Backward-Compatible Component Palette Aliases */
+  --pink: var(--theme-accent-primary);
+  --lavender: var(--theme-accent-secondary);
+  --charcoal: var(--theme-surface-base);
+  --deep-purple: var(--theme-surface-elevated);
+  --silver: var(--theme-text-secondary);
+  --off-white: var(--theme-text-primary);
+
+  --bg-primary: var(--theme-surface-base);
+  --bg-secondary: var(--theme-surface-elevated);
+  --text-primary: var(--theme-text-primary);
+  --text-secondary: var(--theme-text-secondary);
+  --text-muted: var(--theme-text-muted);
+  --border-subtle: var(--theme-border-subtle);
+  --border-accent: var(--theme-border-accent);
+  --slider-fill-color: var(--theme-slider-fill);
+  --font-display: var(--theme-font-display);
+  --font-body: var(--theme-font-body);
+  --font-mono: var(--theme-font-mono);
+}
+
+:root[data-theme="overdrive"] body::before {
+  background-image: var(--theme-gradient-ambient);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   05 SAKURA
+   Twilight Petal Drift — Twilight plum with cherry coral & rose bloom
+   ═══════════════════════════════════════════════════════════════ */
+:root[data-theme="sakura"] {
+  /* Layer A: Semantic Theme Tokens */
+  --theme-accent-primary: #FB7185;
+  --theme-accent-secondary: #F472B6;
+  --theme-surface-base: #18131E;
+  --theme-surface-elevated: #2A1E32;
+  --theme-surface-glass: rgba(42, 30, 50, 0.75);
+  --theme-text-primary: #FFF1F2;
+  --theme-text-secondary: #D8B4E2;
+  --theme-text-muted: rgba(216, 180, 226, 0.72);
+  --theme-border-subtle: rgba(251, 113, 133, 0.20);
+  --theme-border-accent: rgba(251, 113, 133, 0.45);
+  --theme-slider-fill: #FB7185;
+  --theme-glow-a: #FB7185;
+  --theme-glow-b: #F472B6;
+  --theme-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --theme-font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --theme-font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', 'Fira Code', Menlo, monospace;
+  --theme-gradient-ambient:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(42, 30, 50, 0.85), transparent),
+    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(251, 113, 133, 0.14), transparent),
+    radial-gradient(ellipse 50% 35% at 80% 60%, rgba(244, 114, 182, 0.10), transparent);
+
+  /* Layer B: Backward-Compatible Component Palette Aliases */
+  --pink: var(--theme-accent-primary);
+  --lavender: var(--theme-accent-secondary);
+  --charcoal: var(--theme-surface-base);
+  --deep-purple: var(--theme-surface-elevated);
+  --silver: var(--theme-text-secondary);
+  --off-white: var(--theme-text-primary);
+
+  --bg-primary: var(--theme-surface-base);
+  --bg-secondary: var(--theme-surface-elevated);
+  --text-primary: var(--theme-text-primary);
+  --text-secondary: var(--theme-text-secondary);
+  --text-muted: var(--theme-text-muted);
+  --border-subtle: var(--theme-border-subtle);
+  --border-accent: var(--theme-border-accent);
+  --slider-fill-color: var(--theme-slider-fill);
+  --font-display: var(--theme-font-display);
+  --font-body: var(--theme-font-body);
+  --font-mono: var(--theme-font-mono);
+}
+
+:root[data-theme="sakura"] body::before {
+  background-image: var(--theme-gradient-ambient);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   06 MONOCHROME
+   Brutalist Swiss Modernism — Carbon black with stark white & zinc
+   ═══════════════════════════════════════════════════════════════ */
+:root[data-theme="monochrome"] {
+  /* Layer A: Semantic Theme Tokens */
+  --theme-accent-primary: #FFFFFF;
+  --theme-accent-secondary: #A1A1AA;
+  --theme-surface-base: #0A0A0A;
+  --theme-surface-elevated: #18181B;
+  --theme-surface-glass: rgba(24, 24, 27, 0.85);
+  --theme-text-primary: #FFFFFF;
+  --theme-text-secondary: #A1A1AA;
+  --theme-text-muted: rgba(161, 161, 170, 0.65);
+  --theme-border-subtle: rgba(255, 255, 255, 0.14);
+  --theme-border-accent: rgba(255, 255, 255, 0.38);
+  --theme-slider-fill: #FFFFFF;
+  --theme-glow-a: #FFFFFF;
+  --theme-glow-b: #71717A;
+  --theme-font-display: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --theme-font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --theme-font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', 'Fira Code', Menlo, monospace;
+  --theme-gradient-ambient:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(24, 24, 27, 0.90), transparent),
+    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(255, 255, 255, 0.05), transparent),
+    radial-gradient(ellipse 50% 35% at 80% 60%, rgba(161, 161, 170, 0.04), transparent);
+
+  /* Layer B: Backward-Compatible Component Palette Aliases */
+  --pink: var(--theme-accent-primary);
+  --lavender: var(--theme-accent-secondary);
+  --charcoal: var(--theme-surface-base);
+  --deep-purple: var(--theme-surface-elevated);
+  --silver: var(--theme-text-secondary);
+  --off-white: var(--theme-text-primary);
+
+  --bg-primary: var(--theme-surface-base);
+  --bg-secondary: var(--theme-surface-elevated);
+  --text-primary: var(--theme-text-primary);
+  --text-secondary: var(--theme-text-secondary);
+  --text-muted: var(--theme-text-muted);
+  --border-subtle: var(--theme-border-subtle);
+  --border-accent: var(--theme-border-accent);
+  --slider-fill-color: var(--theme-slider-fill);
+  --font-display: var(--theme-font-display);
+  --font-body: var(--theme-font-body);
+  --font-mono: var(--theme-font-mono);
+}
+
+:root[data-theme="monochrome"] body::before {
+  background-image: var(--theme-gradient-ambient);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Root & Body Dynamic Theme Synchronizations
+   ═══════════════════════════════════════════════════════════════ */
+html,
+body,
+#root {
+  background-color: var(--theme-surface-base);
+  color: var(--theme-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

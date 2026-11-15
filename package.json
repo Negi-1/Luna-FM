@@ -1,0 +1,25 @@
+{
+  "name": "luna-fm2",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "catalog": "node scripts/generate-music-catalog.mjs",
+    "dev": "node scripts/generate-music-catalog.mjs && vite",
+    "build": "node scripts/generate-music-catalog.mjs && tsc --noEmit && vite build",
+    "verify": "node scripts/verify-all.mjs",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.4.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.3.5"
+  }
+}
+

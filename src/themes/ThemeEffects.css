@@ -1,0 +1,88 @@
+/**
+ * LUNA.FM — Theme Atmospheric Effects Stylesheet
+ * Strictly non-interactive background layer container with zero pointer events.
+ */
+
+.theme-effects {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  contain: strict;
+}
+
+.theme-effects__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: block;
+}
+
+/* Overdrive CRT Phosphor Scanlines Overlay */
+.theme-effects__scanlines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.28) 3px,
+    rgba(0, 0, 0, 0.28) 4px
+  );
+  opacity: 0.75;
+  mix-blend-mode: overlay;
+}
+
+/* Overdrive Controlled Micro-glitch Shift */
+.theme-effects__glitch {
+  animation: theme-overdrive-flicker 0.08s steps(2, start) infinite;
+}
+
+@keyframes theme-overdrive-flicker {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translate(-1px, 1px);
+    opacity: 0.65;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.75;
+  }
+}
+
+/* Afterglow Warm Ambient Edge Vignette */
+.theme-effects__vignette {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 85% 75% at 50% 50%,
+    transparent 50%,
+    rgba(245, 158, 11, 0.04) 80%,
+    rgba(217, 119, 6, 0.08) 100%
+  );
+}
+
+/* Reduced motion preference: eliminate glitch animation */
+@media (prefers-reduced-motion: reduce) {
+  .theme-effects__scanlines {
+    animation: none !important;
+  }
+  .theme-effects__glitch {
+    animation: none !important;
+    transform: none !important;
+  }
+}

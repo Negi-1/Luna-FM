@@ -1,0 +1,576 @@
+{
+  "generatedAt": "2026-11-15T00:56:49.657Z",
+  "albums": [
+    {
+      "id": "night-drive",
+      "title": "Night Drive",
+      "description": "songs for empty highways and neon signs.",
+      "subtitle": "夜のドライブ",
+      "mood": [
+        "driving",
+        "chill",
+        "3am"
+      ],
+      "order": 10,
+      "coverUrl": "/songs/night-drive/cover.svg",
+      "gradient": "linear-gradient(135deg, #161426 0%, #5c4b8a 100%)",
+      "tracks": [
+        {
+          "id": "night-drive/after-dark",
+          "albumId": "night-drive",
+          "title": "After Dark",
+          "artist": "Mr.Kitty",
+          "album": "Night Drive",
+          "src": "/songs/songs-list/01-after-dark.wav",
+          "artworkUrl": "/songs/night-drive/cover.svg",
+          "duration": 5
+        },
+        {
+          "id": "night-drive/resonance",
+          "albumId": "night-drive",
+          "title": "Resonance",
+          "artist": "HOME",
+          "album": "Night Drive",
+          "src": "/songs/songs-list/02-resonance.wav",
+          "artworkUrl": "/songs/night-drive/cover.svg",
+          "duration": 5
+        },
+        {
+          "id": "night-drive/midnight-city",
+          "albumId": "night-drive",
+          "title": "Midnight City",
+          "artist": "M83",
+          "album": "Night Drive",
+          "src": "/songs/songs-list/03-midnight-city.wav",
+          "artworkUrl": "/songs/night-drive/cover.svg",
+          "duration": 5
+        }
+      ]
+    },
+    {
+      "id": "soft-hours",
+      "title": "Soft Hours",
+      "description": "for the quiet part of the night.",
+      "subtitle": "優しい時間",
+      "mood": [
+        "chill",
+        "lovesick",
+        "dreamcore"
+      ],
+      "order": 20,
+      "coverUrl": "/songs/soft-hours/cover.svg",
+      "gradient": "linear-gradient(135deg, #231b2e 0%, #b9a9d6 100%)",
+      "tracks": [
+        {
+          "id": "soft-hours/velvet",
+          "albumId": "soft-hours",
+          "title": "Velvet",
+          "artist": "Cigarettes After Sex",
+          "album": "Soft Hours",
+          "src": "/songs/songs-list/01-velvet.wav",
+          "artworkUrl": "/songs/soft-hours/cover.svg",
+          "duration": 5
+        },
+        {
+          "id": "soft-hours/moonlight-reflection",
+          "albumId": "soft-hours",
+          "title": "Moonlight Reflection",
+          "artist": "Lamp",
+          "album": "Soft Hours",
+          "src": "/songs/songs-list/02-moonlight.wav",
+          "artworkUrl": "/songs/soft-hours/cover.svg",
+          "duration": 5
+        }
+      ]
+    },
+    {
+      "id": "website-wala-playlist",
+      "title": "website wala playlist",
+      "description": "",
+      "mood": [],
+      "order": 50,
+      "coverUrl": "/songs/website-wala-playlist/cover.png",
+      "gradient": "linear-gradient(135deg, #4b244a 0%, #f3b8d8 100%)",
+      "tracks": [
+        {
+          "id": "website-wala-playlist/01-fukashigi-no-karte-nodoka-toyohama-version",
+          "albumId": "website-wala-playlist",
+          "title": "01 Fukashigi no KARTE Nodoka Toyohama version",
+          "artist": "various",
+          "album": "website wala playlist",
+          "src": "/songs/songs-list/01-Fukashigi_no_KARTE_Nodoka_Toyohama_version.mp3",
+          "artworkUrl": "/songs/website-wala-playlist/cover.png",
+          "duration": 344
+        },
+        {
+          "id": "website-wala-playlist/02-mv",
+          "albumId": "website-wala-playlist",
+          "title": "02 MV",
+          "artist": "various",
+          "album": "website wala playlist",
+          "src": "/songs/songs-list/02-MV.mp3",
+          "artworkUrl": "/songs/website-wala-playlist/cover.png",
+          "duration": 451
+        },
+        {
+          "id": "website-wala-playlist/03-shinka",
+          "albumId": "website-wala-playlist",
+          "title": "03 Shinka",
+          "artist": "various",
+          "album": "website wala playlist",
+          "src": "/songs/songs-list/03-Shinka.mp3",
+          "artworkUrl": "/songs/website-wala-playlist/cover.png",
+          "duration": 318
+        },
+        {
+          "id": "website-wala-playlist/04-music-video-hdver-zankoku-na-tenshi-no-te-ze-the-cruel-angel-s-thesis",
+          "albumId": "website-wala-playlist",
+          "title": "04 MUSIC VIDEO HDver. Zankoku na Tenshi no Te ze The Cruel Angel s Thesis",
+          "artist": "various",
+          "album": "website wala playlist",
+          "src": "/songs/songs-list/04-MUSIC_VIDEO_HDver._Zankoku_na_Tenshi_no_Te-ze_The_Cruel_Angel_s_Thesis.mp3",
+          "artworkUrl": "/songs/website-wala-playlist/cover.png",
+          "duration": 370
+        },
+        {
+          "id": "website-wala-playlist/05-careless-whisper-but-you-re-never-gonna-dance-again",
+          "albumId": "website-wala-playlist",
+          "title": "05 Careless Whisper but you re never gonna dance again",
+          "artist": "various",
+          "album": "website wala playlist",
+          "src": "/songs/songs-list/05-Careless_Whisper_but_you_re_never_gonna_dance_again.mp3",
+          "artworkUrl": "/songs/website-wala-playlist/cover.png",
+          "duration": 427
+        },
+        {
+          "id": "website-wala-playlist/06-sidney-gish-imposter-syndrome",
+          "albumId": "website-wala-playlist",
+          "title": "06 Sidney Gish Imposter Syndrome",
+          "artist": "various",
+          "album": "website wala playlist",
+          "src": "/songs/songs-list/06-Sidney_Gish_-_Imposter_Syndrome.mp3",
+          "artworkUrl": "/songs/website-wala-playlist/cover.png",
+          "duration": 361
+        },
+        {
+          "id": "website-wala-playlist/07-the-perfect-pair-x-perfect-pair",
+          "albumId": "website-wala-playlist",
+          "title": "07 The Perfect Pair x Perfect Pair",
+          "artist": "various",
+          "album": "website wala playlist",
+          "src": "/songs/songs-list/07-The_Perfect_Pair_x_Perfect_Pair.mp3",
+          "artworkUrl": "/songs/website-wala-playlist/cover.png",
+          "duration": 394
+        },
+        {
+          "id": "website-wala-playlist/08-boa-duvet-official-lyric-video",
+          "albumId": "website-wala-playlist",
+          "title": "08 Boa Duvet Official Lyric Video",
+          "artist": "various",
+          "album": "website wala playlist",
+          "src": "/songs/songs-list/08-Boa_-_Duvet_Official_Lyric_Video.mp3",
+          "artworkUrl": "/songs/website-wala-playlist/cover.png",
+          "duration": 287
+        },
+        {
+          "id": "website-wala-playlist/09-malcolm-todd-earrings-official-visualizer",
+          "albumId": "website-wala-playlist",
+          "title": "09 Malcolm Todd Earrings Official Visualizer",
+          "artist": "various",
+          "album": "website wala playlist",
+          "src": "/songs/songs-list/09-Malcolm_Todd_-_Earrings_Official_Visualizer.mp3",
+          "artworkUrl": "/songs/website-wala-playlist/cover.png",
+          "duration": 239
+        },
+        {
+          "id": "website-wala-playlist/10-mv",
+          "albumId": "website-wala-playlist",
+          "title": "10 MV",
+          "artist": "various",
+          "album": "website wala playlist",
+          "src": "/songs/songs-list/10-MV.mp3",
+          "artworkUrl": "/songs/website-wala-playlist/cover.png",
+          "duration": 420
+        },
+        {
+          "id": "website-wala-playlist/11-mattyeux-princess-chelsea-sometimes-official-music-video",
+          "albumId": "website-wala-playlist",
+          "title": "11 Mattyeux Princess Chelsea Sometimes Official Music Video",
+          "artist": "various",
+          "album": "website wala playlist",
+          "src": "/songs/songs-list/11-Mattyeux_Princess_Chelsea_-_Sometimes_Official_Music_Video.mp3",
+          "artworkUrl": "/songs/website-wala-playlist/cover.png",
+          "duration": 316
+        },
+        {
+          "id": "website-wala-playlist/12-75-nhk-vaundy-music-video",
+          "albumId": "website-wala-playlist",
+          "title": "12 75 NHK Vaundy MUSIC VIDEO",
+          "artist": "various",
+          "album": "website wala playlist",
+          "src": "/songs/songs-list/12-75_NHK_Vaundy_-MUSIC_VIDEO.mp3",
+          "artworkUrl": "/songs/website-wala-playlist/cover.png",
+          "duration": 322
+        },
+        {
+          "id": "website-wala-playlist/13-real-man",
+          "albumId": "website-wala-playlist",
+          "title": "13 Real Man",
+          "artist": "various",
+          "album": "website wala playlist",
+          "src": "/songs/songs-list/13-Real_Man.mp3",
+          "artworkUrl": "/songs/website-wala-playlist/cover.png",
+          "duration": 206
+        },
+        {
+          "id": "website-wala-playlist/14-i-think-they-call-this-love-cover",
+          "albumId": "website-wala-playlist",
+          "title": "14 I Think They Call This Love Cover",
+          "artist": "various",
+          "album": "website wala playlist",
+          "src": "/songs/songs-list/14-I_Think_They_Call_This_Love_Cover.mp3",
+          "artworkUrl": "/songs/website-wala-playlist/cover.png",
+          "duration": 275
+        },
+        {
+          "id": "website-wala-playlist/15-loving-machine",
+          "albumId": "website-wala-playlist",
+          "title": "15 Loving Machine",
+          "artist": "various",
+          "album": "website wala playlist",
+          "src": "/songs/songs-list/15-Loving_Machine.mp3",
+          "artworkUrl": "/songs/website-wala-playlist/cover.png",
+          "duration": 321
+        },
+        {
+          "id": "website-wala-playlist/16-beabadoobee-laufey-a-night-to-remember-official-music-video",
+          "albumId": "website-wala-playlist",
+          "title": "16 beabadoobee Laufey A Night To Remember Official Music Video",
+          "artist": "various",
+          "album": "website wala playlist",
+          "src": "/songs/songs-list/16-beabadoobee_Laufey_-_A_Night_To_Remember_Official_Music_Video.mp3",
+          "artworkUrl": "/songs/website-wala-playlist/cover.png",
+          "duration": 343
+        },
+        {
+          "id": "website-wala-playlist/17-something-about-you",
+          "albumId": "website-wala-playlist",
+          "title": "17 Something About You",
+          "artist": "various",
+          "album": "website wala playlist",
+          "src": "/songs/songs-list/17-Something_About_You.mp3",
+          "artworkUrl": "/songs/website-wala-playlist/cover.png",
+          "duration": 291
+        },
+        {
+          "id": "website-wala-playlist/18-impacto",
+          "albumId": "website-wala-playlist",
+          "title": "18 Impacto",
+          "artist": "various",
+          "album": "website wala playlist",
+          "src": "/songs/songs-list/18-Impacto.mp3",
+          "artworkUrl": "/songs/website-wala-playlist/cover.png",
+          "duration": 352
+        },
+        {
+          "id": "website-wala-playlist/19-cafune-tek-it-acoustic-official-audio",
+          "albumId": "website-wala-playlist",
+          "title": "19 Cafune Tek It Acoustic Official Audio",
+          "artist": "various",
+          "album": "website wala playlist",
+          "src": "/songs/songs-list/19-Cafune_-_Tek_It_Acoustic_Official_Audio.mp3",
+          "artworkUrl": "/songs/website-wala-playlist/cover.png",
+          "duration": 283
+        }
+      ]
+    }
+  ],
+  "standaloneTracks": [
+    {
+      "id": "pool/after-dark",
+      "albumId": "pool",
+      "title": "after dark",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/01-after-dark.wav",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 5
+    },
+    {
+      "id": "pool/fukashigi-no-karte-nodoka-toyohama-version",
+      "albumId": "pool",
+      "title": "Fukashigi no KARTE Nodoka Toyohama version",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/01-Fukashigi_no_KARTE_Nodoka_Toyohama_version.mp3",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 344
+    },
+    {
+      "id": "pool/tokyo-rain",
+      "albumId": "pool",
+      "title": "tokyo rain",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/01-tokyo-rain.wav",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 5
+    },
+    {
+      "id": "pool/velvet",
+      "albumId": "pool",
+      "title": "velvet",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/01-velvet.wav",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 5
+    },
+    {
+      "id": "pool/moonlight",
+      "albumId": "pool",
+      "title": "moonlight",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/02-moonlight.wav",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 5
+    },
+    {
+      "id": "pool/mv",
+      "albumId": "pool",
+      "title": "MV",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/02-MV.mp3",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 451
+    },
+    {
+      "id": "pool/resonance",
+      "albumId": "pool",
+      "title": "resonance",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/02-resonance.wav",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 5
+    },
+    {
+      "id": "pool/subway-echoes",
+      "albumId": "pool",
+      "title": "subway echoes",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/02-subway-echoes.wav",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 5
+    },
+    {
+      "id": "pool/midnight-city",
+      "albumId": "pool",
+      "title": "midnight city",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/03-midnight-city.wav",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 5
+    },
+    {
+      "id": "pool/shinka",
+      "albumId": "pool",
+      "title": "Shinka",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/03-Shinka.mp3",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 318
+    },
+    {
+      "id": "pool/music-video-hdver-zankoku-na-tenshi-no-te-ze-the-cruel-angel-s-thesis",
+      "albumId": "pool",
+      "title": "MUSIC VIDEO HDver. Zankoku na Tenshi no Te ze The Cruel Angel s Thesis",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/04-MUSIC_VIDEO_HDver._Zankoku_na_Tenshi_no_Te-ze_The_Cruel_Angel_s_Thesis.mp3",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 370
+    },
+    {
+      "id": "pool/careless-whisper-but-you-re-never-gonna-dance-again",
+      "albumId": "pool",
+      "title": "Careless Whisper but you re never gonna dance again",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/05-Careless_Whisper_but_you_re_never_gonna_dance_again.mp3",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 427
+    },
+    {
+      "id": "pool/sidney-gish-imposter-syndrome",
+      "albumId": "pool",
+      "title": "Sidney Gish Imposter Syndrome",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/06-Sidney_Gish_-_Imposter_Syndrome.mp3",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 361
+    },
+    {
+      "id": "pool/the-perfect-pair-x-perfect-pair",
+      "albumId": "pool",
+      "title": "The Perfect Pair x Perfect Pair",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/07-The_Perfect_Pair_x_Perfect_Pair.mp3",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 394
+    },
+    {
+      "id": "pool/boa-duvet-official-lyric-video",
+      "albumId": "pool",
+      "title": "Boa Duvet Official Lyric Video",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/08-Boa_-_Duvet_Official_Lyric_Video.mp3",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 287
+    },
+    {
+      "id": "pool/malcolm-todd-earrings-official-visualizer",
+      "albumId": "pool",
+      "title": "Malcolm Todd Earrings Official Visualizer",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/09-Malcolm_Todd_-_Earrings_Official_Visualizer.mp3",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 239
+    },
+    {
+      "id": "pool/mv-1",
+      "albumId": "pool",
+      "title": "MV",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/10-MV.mp3",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 420
+    },
+    {
+      "id": "pool/mattyeux-princess-chelsea-sometimes-official-music-video",
+      "albumId": "pool",
+      "title": "Mattyeux Princess Chelsea Sometimes Official Music Video",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/11-Mattyeux_Princess_Chelsea_-_Sometimes_Official_Music_Video.mp3",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 316
+    },
+    {
+      "id": "pool/75-nhk-vaundy-music-video",
+      "albumId": "pool",
+      "title": "75 NHK Vaundy MUSIC VIDEO",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/12-75_NHK_Vaundy_-MUSIC_VIDEO.mp3",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 322
+    },
+    {
+      "id": "pool/real-man",
+      "albumId": "pool",
+      "title": "Real Man",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/13-Real_Man.mp3",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 206
+    },
+    {
+      "id": "pool/i-think-they-call-this-love-cover",
+      "albumId": "pool",
+      "title": "I Think They Call This Love Cover",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/14-I_Think_They_Call_This_Love_Cover.mp3",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 275
+    },
+    {
+      "id": "pool/loving-machine",
+      "albumId": "pool",
+      "title": "Loving Machine",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/15-Loving_Machine.mp3",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 321
+    },
+    {
+      "id": "pool/beabadoobee-laufey-a-night-to-remember-official-music-video",
+      "albumId": "pool",
+      "title": "beabadoobee Laufey A Night To Remember Official Music Video",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/16-beabadoobee_Laufey_-_A_Night_To_Remember_Official_Music_Video.mp3",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 343
+    },
+    {
+      "id": "pool/something-about-you",
+      "albumId": "pool",
+      "title": "Something About You",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/17-Something_About_You.mp3",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 291
+    },
+    {
+      "id": "pool/impacto",
+      "albumId": "pool",
+      "title": "Impacto",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/18-Impacto.mp3",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 352
+    },
+    {
+      "id": "pool/cafune-tek-it-acoustic-official-audio",
+      "albumId": "pool",
+      "title": "Cafune Tek It Acoustic Official Audio",
+      "artist": "various",
+      "album": "",
+      "src": "/songs/songs-list/19-Cafune_-_Tek_It_Acoustic_Official_Audio.mp3",
+      "artworkUrl": null,
+      "isStandalone": true,
+      "duration": 283
+    }
+  ]
+}

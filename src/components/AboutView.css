@@ -1,0 +1,98 @@
+.about-view {
+  position: relative;
+  min-height: calc(100svh - var(--topbar-height));
+  margin-top: var(--topbar-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl) var(--space-md) calc(var(--dock-height) + var(--space-2xl));
+  overflow: hidden;
+}
+
+.about-view__starfield {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.about-view__content {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  width: 100%;
+  text-align: center;
+}
+
+.about-view__badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lavender);
+  margin-bottom: var(--space-sm);
+}
+
+.about-view__title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+  line-height: 1.15;
+}
+
+.about-view__prose {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2xl);
+}
+
+.about-view__prose p {
+  margin-bottom: var(--space-md);
+}
+
+.about-view__back-btn {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pink);
+  background: none;
+  border: 1px solid var(--border-accent);
+  padding: 10px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  margin-bottom: var(--space-3xl);
+  transition: background-color var(--duration-fast) var(--ease-smooth);
+}
+.about-view__back-btn:hover {
+  background: rgba(243, 184, 216, 0.15);
+}
+
+.about-view__footer {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--space-xl);
+  width: 100%;
+}
+
+.about-view__telemetry {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-xs);
+}
+
+.about-view__signature {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--off-white);
+  letter-spacing: 0.04em;
+}
+

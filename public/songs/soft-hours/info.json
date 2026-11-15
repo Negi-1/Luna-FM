@@ -1,0 +1,24 @@
+{
+  "title": "Soft Hours",
+  "description": "for the quiet part of the night.",
+  "subtitle": "優しい時間",
+  "artist": "various",
+  "mood": [
+    "chill",
+    "lovesick",
+    "dreamcore"
+  ],
+  "order": 20,
+  "tracks": [
+    {
+      "file": "01-velvet.wav",
+      "title": "Velvet",
+      "artist": "Cigarettes After Sex"
+    },
+    {
+      "file": "02-moonlight.wav",
+      "title": "Moonlight Reflection",
+      "artist": "Lamp"
+    }
+  ]
+}

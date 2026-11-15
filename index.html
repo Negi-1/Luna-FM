@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#19171E" />
+  <script>
+    (function() {
+      try {
+        var VALID = ['nocturne', 'aqua', 'afterglow', 'overdrive', 'sakura', 'monochrome'];
+        var saved = localStorage.getItem('luna-fm-theme');
+        var theme = (saved && VALID.indexOf(saved) !== -1) ? saved : 'nocturne';
+        document.documentElement.setAttribute('data-theme', theme);
+        var BG_MAP = {
+          nocturne: '#19171E',
+          aqua: '#08131B',
+          afterglow: '#17120E',
+          overdrive: '#0D0B12',
+          sakura: '#18131E',
+          monochrome: '#0A0A0A'
+        };
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta && BG_MAP[theme]) {
+          meta.setAttribute('content', BG_MAP[theme]);
+        }
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'nocturne');
+      }
+    })();
+  </script>
+  <title>☾⋆⁺₊ LUNA.FM ⁺₊ — a personal music archive</title>
+  <meta name="description" content="☾ late-night personal internet radio. independently curated." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☾</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/index.css" />
+  <style>
+    html[data-theme="nocturne"], html[data-theme="nocturne"] body, html[data-theme="nocturne"] #root { background-color: #19171E; color: #F5F0F5; }
+    html[data-theme="aqua"], html[data-theme="aqua"] body, html[data-theme="aqua"] #root { background-color: #08131B; color: #E0F7FA; }
+    html[data-theme="afterglow"], html[data-theme="afterglow"] body, html[data-theme="afterglow"] #root { background-color: #17120E; color: #FEF3C7; }
+    html[data-theme="overdrive"], html[data-theme="overdrive"] body, html[data-theme="overdrive"] #root { background-color: #0D0B12; color: #FFFFFF; }
+    html[data-theme="sakura"], html[data-theme="sakura"] body, html[data-theme="sakura"] #root { background-color: #18131E; color: #FFF1F2; }
+    html[data-theme="monochrome"], html[data-theme="monochrome"] body, html[data-theme="monochrome"] #root { background-color: #0A0A0A; color: #FFFFFF; }
+    html, body {
+      background-color: var(--theme-surface-base, #19171E);
+      color: var(--theme-text-primary, #F5F0F5);
+      margin: 0;
+      padding: 0;
+      min-height: 100svh;
+      overflow-x: clip;
+    }
+    .skip-link {
+      position: fixed;
+      top: -100px;
+      left: 12px;
+      z-index: 10000;
+      padding: 8px 16px;
+      font-family: monospace;
+      font-size: 0.82rem;
+      background: var(--theme-surface-elevated, #292231);
+      color: var(--theme-text-primary, #F5F0F5);
+      border: 1px solid var(--theme-accent-primary, #F3B8D8);
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    .skip-link:focus {
+      top: 12px;
+    }
+    #root {
+      background-color: var(--theme-surface-base, #19171E);
+      min-height: 100svh;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

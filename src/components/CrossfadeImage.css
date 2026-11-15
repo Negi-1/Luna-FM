@@ -1,0 +1,59 @@
+.crossfade-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.crossfade-image__layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+  transform: translateZ(0);
+  will-change: opacity;
+}
+
+.crossfade-image__layer--entering {
+  opacity: 0;
+  animation: crossfade-in var(--duration-artwork) var(--ease-smooth) forwards;
+}
+
+.crossfade-image__layer--exiting {
+  opacity: 1;
+  animation: crossfade-out 420ms var(--ease-smooth) forwards;
+}
+
+.crossfade-image__fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--border-subtle);
+  border-radius: inherit;
+  color: var(--lavender);
+  opacity: 0.65;
+  font-size: 1.5rem;
+}
+
+@keyframes crossfade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes crossfade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crossfade-image__layer--entering,
+  .crossfade-image__layer--exiting {
+    animation-duration: 0ms !important;
+  }
+}

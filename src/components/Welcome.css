@@ -1,0 +1,719 @@
+/* ═══════════════════════════════════════════════════════════════
+   Welcome — Intro Sequence Overlay
+   Features:
+   - Elements slide in from varied/random directions into perfect alignment
+   - Typography blinks into electric neon life with bright luminous bloom
+   - Signature glowing "LUNA" branding on "EXPLORE LUNA.FM" CTA button
+   - Site proceeds exclusively via CTA button interaction
+   ═══════════════════════════════════════════════════════════════ */
+
+.welcome {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-welcome, 200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(35, 27, 46, 0.96) 0%,
+    rgba(25, 23, 30, 0.99) 70%,
+    #121017 100%
+  );
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 550ms var(--ease-smooth),
+              transform 550ms var(--ease-smooth);
+  overflow: hidden;
+  user-select: none;
+  cursor: default;
+  padding: var(--space-lg);
+}
+
+.welcome--exiting {
+  opacity: 0;
+  transform: scale(1.035);
+  pointer-events: none;
+}
+
+/* ── Night-listener illustration background ─────────────────── */
+.welcome__illustration {
+  position: absolute;
+  width: min(90vw, 680px);
+  aspect-ratio: 1 / 1;
+  opacity: 0;
+  transform: scale(0.45) rotate(-35deg);
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 900ms ease-out 100ms,
+              transform 1300ms cubic-bezier(0.16, 1, 0.3, 1) 100ms;
+}
+
+.welcome__illustration--visible {
+  opacity: 0.35;
+  transform: scale(1) rotate(0deg);
+}
+
+/* ── Ambient bloom ─────────────────────────────────────────── */
+.welcome__bloom {
+  position: absolute;
+  width: min(85vw, 660px);
+  aspect-ratio: 1 / 1;
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    color-mix(in oklch, var(--glow-a, #F3B8D8) 42%, transparent) 0%,
+    color-mix(in oklch, var(--glow-b, #B9A9D6) 26%, transparent) 50%,
+    transparent 75%
+  );
+  transform: scale(0.7);
+  opacity: 0;
+  filter: blur(52px);
+}
+
+.welcome__bloom--animate {
+  animation: welcome-bloom-ignite 1600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes welcome-bloom-ignite {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.7;
+    filter: blur(44px);
+  }
+  100% {
+    transform: scale(1.38);
+    opacity: 0.58;
+    filter: blur(56px);
+  }
+}
+
+/* ── Card Container ────────────────────────────────────────── */
+.welcome__card {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 600px;
+  width: 100%;
+  padding: var(--space-xl) var(--space-md);
+}
+
+/* ── Celestial accents arriving from random outer angles ───── */
+.welcome__star,
+.welcome__moon {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform, opacity;
+}
+
+/* 1. Star Top-Left: incoming from deep upper-left */
+.welcome__star--top-left {
+  top: -16px;
+  left: -32px;
+  font-size: 1.25rem;
+  color: var(--pink);
+  opacity: 0;
+  transform: translate(-200px, -150px) scale(0.2) rotate(-90deg);
+  transition: transform 1050ms cubic-bezier(0.16, 1, 0.3, 1) 120ms,
+              opacity 800ms ease-out 120ms;
+}
+
+.welcome__card--visible .welcome__star--top-left {
+  opacity: 0.85;
+  transform: translate(0, 0) scale(1) rotate(0deg);
+  animation: welcome-twinkle-left 3.4s ease-in-out infinite 1.2s;
+}
+
+/* 2. Moon Top-Right: incoming from upper-right */
+.welcome__moon--top-right {
+  top: 8px;
+  right: -28px;
+  font-size: 1.55rem;
+  color: var(--off-white);
+  opacity: 0;
+  font-style: italic;
+  filter: drop-shadow(0 0 10px rgba(245, 240, 245, 0.6));
+  transform: translate(190px, -140px) scale(0.3) rotate(55deg);
+  transition: transform 1150ms cubic-bezier(0.16, 1, 0.3, 1) 160ms,
+              opacity 850ms ease-out 160ms;
+}
+
+.welcome__card--visible .welcome__moon--top-right {
+  opacity: 0.85;
+  transform: translate(0, 0) scale(1) rotate(0deg);
+  animation: welcome-moon-float 4.5s ease-in-out infinite 1.4s;
+}
+
+/* 3. Star Mid-Right: incoming from far right */
+.welcome__star--mid-right {
+  top: 46%;
+  right: -42px;
+  font-size: 1.05rem;
+  color: var(--pink);
+  opacity: 0;
+  transform: translate(220px, 30px) scale(0.2);
+  transition: transform 1000ms cubic-bezier(0.16, 1, 0.3, 1) 240ms,
+              opacity 750ms ease-out 240ms;
+}
+
+.welcome__card--visible .welcome__star--mid-right {
+  opacity: 0.75;
+  transform: translate(0, 0) scale(1);
+  animation: welcome-twinkle-right 2.9s ease-in-out infinite 1.3s;
+}
+
+/* 4. Star Bottom-Right: incoming from deep bottom-right */
+.welcome__star--bottom-right {
+  bottom: 80px;
+  right: 8px;
+  font-size: 1.15rem;
+  color: var(--lavender);
+  opacity: 0;
+  transform: translate(160px, 180px) scale(0.2);
+  transition: transform 1100ms cubic-bezier(0.16, 1, 0.3, 1) 320ms,
+              opacity 800ms ease-out 320ms;
+}
+
+.welcome__card--visible .welcome__star--bottom-right {
+  opacity: 0.7;
+  transform: translate(0, 0) scale(1);
+  animation: welcome-twinkle-left 3.8s ease-in-out infinite 1.6s;
+}
+
+@keyframes welcome-twinkle-left {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes welcome-twinkle-right {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes welcome-moon-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* ── 1. Top Header Pill: arrives from top-left ──────────────── */
+.welcome__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(41, 34, 49, 0.7);
+  border: 1px solid rgba(185, 169, 214, 0.2);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  margin-bottom: 22px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  transform: translate(-150px, -80px) rotate(-6deg);
+  transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1) 80ms,
+              opacity 700ms ease-out 80ms;
+  will-change: transform, opacity;
+}
+
+.welcome__card--visible .welcome__badge {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0deg);
+  animation: neon-badge-strike 1.6s ease-out 0.2s forwards;
+}
+
+.welcome__badge-ja {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--off-white);
+  font-size: 0.82rem;
+}
+
+.welcome__badge-sep {
+  color: var(--pink);
+  opacity: 0.8;
+  margin: 0 2px;
+}
+
+.welcome__badge-brand {
+  text-transform: uppercase;
+  color: var(--silver);
+  font-weight: 400;
+}
+
+/* ── 2. Title: arrives from left, blinks into neon life ─────── */
+.welcome__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+  font-size: clamp(2.8rem, 7vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--pink);
+  margin: 0 0 18px 0;
+  opacity: 0;
+  transform: translate(-190px, 35px) rotate(3deg);
+  transition: transform 1000ms cubic-bezier(0.16, 1, 0.3, 1) 180ms,
+              opacity 750ms ease-out 180ms;
+  will-change: transform, opacity;
+}
+
+.welcome__card--visible .welcome__title {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0deg);
+  animation: neon-title-ignite 1.7s ease-out 0.25s forwards,
+             neon-title-pulse 4.2s ease-in-out 2s infinite alternate;
+}
+
+/* ── 3. Quote: arrives from top-right, neon lavender ignition ── */
+.welcome__quote {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  line-height: 1.35;
+  color: var(--off-white);
+  margin: 0 0 18px 0;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  transform: translate(170px, -45px) rotate(-2.5deg);
+  transition: transform 950ms cubic-bezier(0.16, 1, 0.3, 1) 280ms,
+              opacity 750ms ease-out 280ms;
+  will-change: transform, opacity;
+}
+
+.welcome__card--visible .welcome__quote {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0deg);
+  animation: neon-quote-ignite 1.8s ease-out 0.35s forwards,
+             neon-quote-pulse 4.6s ease-in-out 2.2s infinite alternate;
+}
+
+/* ── 4. Description: arrives from bottom-left ──────────────── */
+.welcome__desc {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: clamp(0.82rem, 1.8vw, 0.92rem);
+  line-height: 1.65;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  max-width: 450px;
+  margin: 0 0 34px 0;
+  opacity: 0;
+  transform: translate(-130px, 90px) rotate(1.5deg);
+  transition: transform 950ms cubic-bezier(0.16, 1, 0.3, 1) 380ms,
+              opacity 750ms ease-out 380ms;
+  will-change: transform, opacity;
+}
+
+.welcome__card--visible .welcome__desc {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0deg);
+  animation: neon-desc-glow 1.5s ease-out 0.45s forwards;
+}
+
+/* ── 5. Action Row: arrives from bottom-right ──────────────── */
+.welcome__action-row {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translate(140px, 110px) rotate(-2deg);
+  transition: transform 1000ms cubic-bezier(0.16, 1, 0.3, 1) 480ms,
+              opacity 800ms ease-out 480ms;
+  will-change: transform, opacity;
+}
+
+.welcome__card--visible .welcome__action-row {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0deg);
+}
+
+/* ── CTA Button: Explore LUNA.FM (Signature Glowing Font & Neon) ── */
+.welcome__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(41, 34, 49, 0.85);
+  border: 1.5px solid rgba(243, 184, 216, 0.55);
+  border-radius: 999px;
+  padding: 13px 28px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--off-white);
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(243, 184, 216, 0.28),
+              0 4px 18px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform var(--duration-fast) var(--ease-smooth),
+              background var(--duration-fast) var(--ease-smooth),
+              border-color var(--duration-fast) var(--ease-smooth),
+              box-shadow var(--duration-fast) var(--ease-smooth),
+              color var(--duration-fast) var(--ease-smooth);
+}
+
+.welcome__cta-play {
+  font-size: 0.76rem;
+  color: var(--pink);
+  line-height: 1;
+  filter: drop-shadow(0 0 6px rgba(243, 184, 216, 0.8));
+  transition: transform var(--duration-fast) var(--ease-smooth);
+}
+
+.welcome__cta-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  line-height: 1;
+}
+
+/* Signature Glowing "LUNA" branding */
+.welcome__cta-luna {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.15em;
+  letter-spacing: 0.05em;
+  color: var(--pink);
+  text-shadow: 0 0 4px #FFFFFF,
+               0 0 10px var(--pink),
+               0 0 22px var(--pink),
+               0 0 45px color-mix(in oklch, var(--pink) 85%, transparent);
+  padding: 0 1px;
+  display: inline-block;
+  transition: transform var(--duration-fast) var(--ease-smooth),
+              text-shadow var(--duration-fast) var(--ease-smooth);
+  animation: neon-luna-breathe 3s ease-in-out infinite alternate;
+}
+
+.welcome__cta-btn:hover {
+  background: color-mix(in oklch, var(--pink) 22%, transparent);
+  border-color: var(--pink);
+  color: #FFFFFF;
+  box-shadow: 0 0 30px color-mix(in oklch, var(--pink) 65%, transparent),
+              0 0 60px color-mix(in oklch, var(--pink) 35%, transparent);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.welcome__cta-btn:hover .welcome__cta-play {
+  transform: scale(1.2);
+}
+
+.welcome__cta-btn:hover .welcome__cta-luna {
+  text-shadow: 0 0 6px #FFFFFF,
+               0 0 16px var(--pink),
+               0 0 34px var(--pink),
+               0 0 65px var(--pink),
+               0 0 95px color-mix(in oklch, var(--pink) 95%, transparent);
+  transform: scale(1.08);
+}
+
+.welcome__cta-btn:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.welcome__telemetry {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  color: var(--silver);
+  opacity: 0.7;
+  text-shadow: 0 0 10px rgba(185, 169, 214, 0.3);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   NEON BLINK & IGNITION ANIMATION KEYFRAMES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── 1. Title Neon Ignition (Flickers bright primary accent into life) ── */
+@keyframes neon-title-ignite {
+  0% {
+    color: color-mix(in oklch, var(--pink) 15%, transparent);
+    text-shadow: none;
+    filter: brightness(0.4);
+  }
+  8% {
+    color: #FFFFFF;
+    text-shadow: 0 0 4px #FFFFFF,
+                 0 0 12px var(--pink),
+                 0 0 30px var(--pink),
+                 0 0 60px color-mix(in oklch, var(--pink) 85%, transparent);
+    filter: brightness(1.6);
+  }
+  14% {
+    color: color-mix(in oklch, var(--pink) 25%, transparent);
+    text-shadow: none;
+    filter: brightness(0.6);
+  }
+  22% {
+    color: #FFFFFF;
+    text-shadow: 0 0 6px #FFFFFF,
+                 0 0 18px var(--pink),
+                 0 0 40px var(--pink),
+                 0 0 80px color-mix(in oklch, var(--pink) 90%, transparent);
+    filter: brightness(1.8);
+  }
+  30% {
+    color: color-mix(in oklch, var(--pink) 40%, transparent);
+    text-shadow: 0 0 6px var(--pink);
+    filter: brightness(0.8);
+  }
+  42% {
+    color: #FFFFFF;
+    text-shadow: 0 0 10px #FFFFFF,
+                 0 0 24px var(--pink),
+                 0 0 55px var(--pink),
+                 0 0 95px color-mix(in oklch, var(--pink) 95%, transparent),
+                 0 0 140px color-mix(in oklch, var(--pink) 65%, transparent);
+    filter: brightness(2);
+  }
+  50% {
+    color: var(--pink);
+    text-shadow: 0 0 4px #FFFFFF,
+                 0 0 14px var(--pink),
+                 0 0 32px var(--pink),
+                 0 0 65px color-mix(in oklch, var(--pink) 80%, transparent);
+    filter: brightness(1.1);
+  }
+  64% {
+    color: #FFFFFF;
+    text-shadow: 0 0 8px #FFFFFF,
+                 0 0 20px var(--pink),
+                 0 0 45px var(--pink),
+                 0 0 85px color-mix(in oklch, var(--pink) 90%, transparent);
+    filter: brightness(1.5);
+  }
+  100% {
+    color: var(--pink);
+    text-shadow: 0 0 4px #FFFFFF,
+                 0 0 14px var(--pink),
+                 0 0 32px var(--pink),
+                 0 0 65px color-mix(in oklch, var(--pink) 75%, transparent),
+                 0 0 110px color-mix(in oklch, var(--pink) 45%, transparent);
+    filter: brightness(1.05);
+  }
+}
+
+/* Gentle ambient neon pulse once steady */
+@keyframes neon-title-pulse {
+  0%, 100% {
+    text-shadow: 0 0 4px #FFFFFF,
+                 0 0 14px var(--pink),
+                 0 0 32px var(--pink),
+                 0 0 65px color-mix(in oklch, var(--pink) 75%, transparent),
+                 0 0 110px color-mix(in oklch, var(--pink) 45%, transparent);
+  }
+  50% {
+    text-shadow: 0 0 6px #FFFFFF,
+                 0 0 18px var(--pink),
+                 0 0 42px var(--pink),
+                 0 0 80px color-mix(in oklch, var(--pink) 90%, transparent),
+                 0 0 130px color-mix(in oklch, var(--pink) 55%, transparent);
+  }
+}
+
+/* ── 2. Quote Neon Ignition (Flickers secondary accent into life) ────── */
+@keyframes neon-quote-ignite {
+  0% {
+    color: color-mix(in oklch, var(--off-white) 15%, transparent);
+    text-shadow: none;
+  }
+  12% {
+    color: #FFFFFF;
+    text-shadow: 0 0 6px #FFFFFF,
+                 0 0 14px var(--lavender),
+                 0 0 32px color-mix(in oklch, var(--lavender) 85%, transparent);
+  }
+  20% {
+    color: color-mix(in oklch, var(--off-white) 25%, transparent);
+    text-shadow: none;
+  }
+  34% {
+    color: #FFFFFF;
+    text-shadow: 0 0 8px #FFFFFF,
+                 0 0 18px var(--lavender),
+                 0 0 38px color-mix(in oklch, var(--lavender) 90%, transparent);
+  }
+  44% {
+    color: color-mix(in oklch, var(--off-white) 50%, transparent);
+    text-shadow: 0 0 6px var(--lavender);
+  }
+  60% {
+    color: #FFFFFF;
+    text-shadow: 0 0 8px #FFFFFF,
+                 0 0 22px var(--lavender),
+                 0 0 45px color-mix(in oklch, var(--lavender) 95%, transparent),
+                 0 0 70px color-mix(in oklch, var(--pink) 55%, transparent);
+  }
+  100% {
+    color: var(--off-white);
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.85),
+                 0 0 10px var(--lavender),
+                 0 0 24px color-mix(in oklch, var(--lavender) 65%, transparent),
+                 0 0 45px color-mix(in oklch, var(--lavender) 35%, transparent);
+  }
+}
+
+@keyframes neon-quote-pulse {
+  0%, 100% {
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.85),
+                 0 0 10px var(--lavender),
+                 0 0 24px color-mix(in oklch, var(--lavender) 65%, transparent),
+                 0 0 45px color-mix(in oklch, var(--lavender) 35%, transparent);
+  }
+  50% {
+    text-shadow: 0 0 5px #FFFFFF,
+                 0 0 14px var(--lavender),
+                 0 0 32px color-mix(in oklch, var(--lavender) 85%, transparent),
+                 0 0 55px color-mix(in oklch, var(--lavender) 45%, transparent);
+  }
+}
+
+/* ── 3. Badge Frame & Text Ignition ────────────────────────── */
+@keyframes neon-badge-strike {
+  0% {
+    border-color: rgba(185, 169, 214, 0.1);
+    box-shadow: none;
+  }
+  18% {
+    border-color: var(--pink);
+    box-shadow: 0 0 18px rgba(243, 184, 216, 0.7),
+                inset 0 0 10px rgba(243, 184, 216, 0.35);
+  }
+  26% {
+    border-color: rgba(185, 169, 214, 0.15);
+    box-shadow: none;
+  }
+  42% {
+    border-color: var(--pink);
+    box-shadow: 0 0 24px rgba(243, 184, 216, 0.85),
+                inset 0 0 12px rgba(243, 184, 216, 0.45);
+  }
+  100% {
+    border-color: rgba(243, 184, 216, 0.45);
+    box-shadow: 0 0 14px rgba(243, 184, 216, 0.35),
+                inset 0 0 8px rgba(243, 184, 216, 0.15);
+  }
+}
+
+/* ── 4. Description Subtle Luminescence ────────────────────── */
+@keyframes neon-desc-glow {
+  0% {
+    opacity: 0.3;
+    text-shadow: none;
+  }
+  50% {
+    opacity: 0.95;
+    text-shadow: 0 0 8px rgba(199, 197, 206, 0.4);
+  }
+  100% {
+    opacity: 0.9;
+    text-shadow: 0 0 5px rgba(199, 197, 206, 0.2);
+  }
+}
+
+/* ── 5. LUNA Breathing Pulse in CTA Button ─────────────────── */
+@keyframes neon-luna-breathe {
+  0% {
+    text-shadow: 0 0 4px #FFFFFF,
+                 0 0 10px var(--pink),
+                 0 0 22px var(--pink),
+                 0 0 45px color-mix(in oklch, var(--pink) 85%, transparent);
+  }
+  100% {
+    text-shadow: 0 0 5px #FFFFFF,
+                 0 0 14px var(--pink),
+                 0 0 28px var(--pink),
+                 0 0 55px color-mix(in oklch, var(--pink) 95%, transparent),
+                 0 0 80px color-mix(in oklch, var(--pink) 50%, transparent);
+  }
+}
+
+/* ── Mobile Responsive Adjustments ─────────────────────────── */
+@media (max-width: 640px) {
+  .welcome__card {
+    padding: var(--space-lg) var(--space-xs);
+  }
+
+  /* Scale down translation vectors for mobile viewports to prevent overflow */
+  .welcome__badge {
+    transform: translate(-80px, -40px) rotate(-4deg);
+  }
+  .welcome__title {
+    transform: translate(-100px, 20px) rotate(2deg);
+  }
+  .welcome__quote {
+    transform: translate(90px, -25px) rotate(-1.5deg);
+  }
+  .welcome__desc {
+    transform: translate(-70px, 50px) rotate(1deg);
+  }
+  .welcome__action-row {
+    transform: translate(80px, 60px) rotate(-1.5deg);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .welcome__star--top-left,
+  .welcome__moon--top-right,
+  .welcome__star--mid-right {
+    display: none; /* Hide overflow stars on very narrow screens */
+  }
+}
+
+/* ── Reduced motion fallback ───────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .welcome {
+    transition-duration: 150ms !important;
+  }
+
+  .welcome__card,
+  .welcome__bloom,
+  .welcome__star,
+  .welcome__moon,
+  .welcome__badge,
+  .welcome__title,
+  .welcome__quote,
+  .welcome__desc,
+  .welcome__action-row,
+  .welcome__illustration {
+    transition: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

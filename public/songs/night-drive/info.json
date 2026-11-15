@@ -1,0 +1,29 @@
+{
+  "title": "Night Drive",
+  "description": "songs for empty highways and neon signs.",
+  "subtitle": "夜のドライブ",
+  "artist": "various",
+  "mood": [
+    "driving",
+    "chill",
+    "3am"
+  ],
+  "order": 10,
+  "tracks": [
+    {
+      "file": "01-after-dark.wav",
+      "title": "After Dark",
+      "artist": "Mr.Kitty"
+    },
+    {
+      "file": "02-resonance.wav",
+      "title": "Resonance",
+      "artist": "HOME"
+    },
+    {
+      "file": "03-midnight-city.wav",
+      "title": "Midnight City",
+      "artist": "M83"
+    }
+  ]
+}

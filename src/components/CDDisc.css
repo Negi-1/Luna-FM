@@ -1,0 +1,67 @@
+.cd-disc {
+  position: relative;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #1a1520,
+    #2a2235 52deg,
+    #1a1520 104deg,
+    #2e2639 156deg,
+    #1a1520 208deg,
+    #2a2235 260deg,
+    #1a1520 360deg
+  );
+  box-shadow:
+    inset 0 0 12px rgba(0, 0, 0, 0.5),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Concentric grooves */
+.cd-disc::before {
+  content: '';
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+  border: 1px solid rgba(185, 169, 214, 0.08);
+  box-shadow:
+    inset 0 0 0 4px rgba(185, 169, 214, 0.04),
+    inset 0 0 0 8px rgba(185, 169, 214, 0.06),
+    inset 0 0 0 12px rgba(185, 169, 214, 0.04),
+    inset 0 0 0 16px rgba(185, 169, 214, 0.05);
+}
+
+/* Hub + spindle hole */
+.cd-disc::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 26%;
+  height: 26%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    transparent 28%,
+    rgba(25, 23, 30, 0.9) 30%,
+    rgba(42, 34, 53, 0.95) 60%,
+    rgba(25, 23, 30, 0.9) 100%
+  );
+  border: 1px solid rgba(185, 169, 214, 0.1);
+}
+
+/* Spinning state */
+.cd-disc--spinning {
+  animation: spin 7s linear infinite;
+}
+
+.cd-disc--paused {
+  animation: spin 7s linear infinite;
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cd-disc--spinning {
+    animation: none;
+  }
+}
